@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-<!-- 引入配置文件 -->
-<!-- 	<properties resource="jdbc.properties"/> -->
+	<!-- 引入配置文件 -->
+	<!-- <properties resource="jdbc.properties"/> -->
 
 	<classPathEntry
 		location="E:\Program Files\develop\maven\repository\mysql\mysql-connector-java\8.0.12\mysql-connector-java-8.0.12.jar" />
@@ -14,13 +14,15 @@
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
 		<!--数据库链接URL，用户名、密码 -->
-		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/schoolsys?serverTimezone=UTC"
-			driverClass="com.mysql.cj.jdbc.Driver" password="12345" userId="root"/>
+		<jdbcConnection
+			connectionURL="jdbc:mysql://localhost:3306/schoolsys?serverTimezone=UTC"
+			driverClass="com.mysql.cj.jdbc.Driver" password="12345" userId="root" />
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.example.demo.dao.entity"
+		<javaModelGenerator
+			targetPackage="com.example.demo.dao.entity"
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -31,23 +33,19 @@
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!-- 生成DAO的包名和位置 -->
-		  <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码
-            type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
-            type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
-            type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
-    -->
+		<!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码 type="ANNOTATEDMAPPER",生成Java Model 
+			和基于注解的Mapper对象 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象 type="XMLMAPPER",生成SQLMap 
+			XML文件和独立的Mapper接口 -->
 		<javaClientGenerator type="XMLMAPPER"
 			targetPackage="com.example.demo.dao" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名 -->
-		<table tableName="student"
-			enableCountByExample="false" enableUpdateByExample="false"
-			enableDeleteByExample="false" enableSelectByExample="false"
-			selectByExampleQueryId="false"/>
-			<table tableName="timetable"
-			enableCountByExample="false" enableUpdateByExample="false"
-			enableDeleteByExample="false" enableSelectByExample="false"
-			selectByExampleQueryId="false"/>
+		<table tableName="student" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="timetable" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
 	</context>
 </generatorConfiguration>

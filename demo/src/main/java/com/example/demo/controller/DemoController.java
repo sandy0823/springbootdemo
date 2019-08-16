@@ -12,7 +12,6 @@ public class DemoController {
 	@Autowired
     private StudentDao studentDao;
 	
-	
 	@RequestMapping("/hello")
 	public Student demo(){
 		return studentDao.selectByPrimaryKey(1);

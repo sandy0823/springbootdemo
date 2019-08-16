@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.example")
-@MapperScan("com.example.demo.dao.entity") // mybatis扫描路径，针对的是接口Mapper类
+@MapperScan("com.example.demo.dao") // mybatis扫描路径，针对的是接口Mapper类
 public class DemoApplication {
 
 	public static void main(String[] args) {
