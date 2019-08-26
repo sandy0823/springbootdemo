@@ -1,0 +1,19 @@
+day: 
+   username: day_sandy_classpath_applicaiton_yml
+   test: 
+      username: test_classpath_applicaiton_yml
+      
+      
+spring: 
+   datasource:
+      name: test
+      url: jdbc:mysql://localhost:3306/schoolsys?serverTimezone=UTC
+      type: com.alibaba.druid.pool.DruidDataSource
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      
+server: 
+   port: 8080
+   servlet: 
+      context-path: /demo
