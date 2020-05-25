@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import com.example.demo.config.dto.ApplicationPropertiesV2;
 import com.example.demo.config.dto.CoustomPropertiesInjectV1;
 import com.example.demo.config.dto.CoustomPropertiesInjectV2;
 import com.example.demo.config.dto.CoustomYamlInjectV1;
+import com.example.demo.util.SpringContextUtil;
 
 
 /**
@@ -75,6 +77,12 @@ public class PropertiesController {
 	 */
 	@GetMapping("/application/V2")
 	public ApplicationPropertiesV2 findApplicationInjectV2(){
+		return applicationPropertiesV2;
+	}
+	
+	@RequestMapping("refresh")
+	public ApplicationPropertiesV2 refresh(){
+		((AbstractApplicationContext) SpringContextUtil.getApplicationContext()).refresh();;
 		return applicationPropertiesV2;
 	}
 }
