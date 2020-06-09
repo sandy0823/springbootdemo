@@ -1,0 +1,14 @@
+	/**
+	 * 获取工作目录
+	 */
+	public static void getWorkDir() {
+		
+		String jarWholePath = PathTool.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+		try {
+			jarWholePath = java.net.URLDecoder.decode(jarWholePath, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			System.out.println(e.toString());
+		}
+		workDir = new File(jarWholePath).getParentFile().getAbsolutePath();
+		System.out.println("workDir is >>> " + workDir);
+	}
